@@ -24,7 +24,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <finalName>${project.artifactId}-${project.version}-git-${git.branch}-${git.commit.id.full}</finalName>
+                            <finalName>${project.artifactId}-${project.version}-${git.branch}-${git.commit.id.full}</finalName>
                             <archive>
                                 <manifest>
                                     <mainClass>com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.init.HubInit</mainClass>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.config;
+package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.config;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,9 +12,13 @@ import lombok.Setter;
  *
  * @author jdcs_dev
  */
-public class HubConfig {
+public class DbConfig {
 
     @Getter
     @Setter
-    private int serverPort = 40000;
+    private String hubHost = "127.0.0.1";
+    @Getter
+    @Setter
+    private int hubPort = 40000;
+
 }
