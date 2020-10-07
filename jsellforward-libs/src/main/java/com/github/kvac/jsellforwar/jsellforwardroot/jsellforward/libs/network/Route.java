@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.config;
-
-import lombok.Getter;
-import lombok.Setter;
+package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.network;
 
 /**
  *
  * @author jdcs_dev
  */
-public class HubConfig {
+public class Route {
 
-    @Getter
-    @Setter
-    private int serverPort = 40000;
 }

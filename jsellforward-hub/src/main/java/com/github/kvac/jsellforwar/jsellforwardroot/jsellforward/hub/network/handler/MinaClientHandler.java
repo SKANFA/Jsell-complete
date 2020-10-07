@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.config;
+package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.network.handler;
 
-import lombok.Getter;
-import lombok.Setter;
+import org.apache.mina.core.service.IoHandlerAdapter;
 
 /**
  *
  * @author jdcs_dev
  */
-public class HubConfig {
+public class MinaClientHandler extends IoHandlerAdapter {
 
-    @Getter
-    @Setter
-    private int serverPort = 40000;
 }
