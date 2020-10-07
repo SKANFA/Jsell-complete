@@ -1,0 +1,6 @@
+/jsellforward-libs/target/
+/jsellforward-client/target/
+/jsellforward-sshd/target/
+/jsellforward-db/target/
+/jsellforward-authd/target/
+/jsellforward-hub/target/
