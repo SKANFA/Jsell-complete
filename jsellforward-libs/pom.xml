@@ -9,4 +9,13 @@
     <groupId>com.github.kvac.jsellforwar.jsellforward-root</groupId>
     <artifactId>jsellforward-libs</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.j256.ormlite</groupId>
+            <artifactId>ormlite-core</artifactId>
+            <version>5.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
 </project>
