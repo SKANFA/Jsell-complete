@@ -9,4 +9,34 @@
     <groupId>com.github.kvac.jsellforwar.jsellforward-root</groupId>
     <artifactId>jsellforward-authd</artifactId>
     <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <!-- build a -->
+                    <execution>
+                        <id>build-a</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <finalName>${project.artifactId}-${project.version}-${git.branch}-${git.commit.id.full}</finalName>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.authd.init.AuthDInit</mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                    </execution>
+                    <!-- build b -->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

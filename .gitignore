@@ -4,3 +4,5 @@
 /jsellforward-db/target/
 /jsellforward-authd/target/
 /jsellforward-hub/target/
+/jsellforward-utils/target/
+/jsellforward-utils/createrinitscripts/

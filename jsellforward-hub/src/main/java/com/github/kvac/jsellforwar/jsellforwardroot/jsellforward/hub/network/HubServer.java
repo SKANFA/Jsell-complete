@@ -17,9 +17,9 @@ public class HubServer {
         ObjectSerializationCodecFactory objectSerializationCodecFactory = new ObjectSerializationCodecFactory();
         objectSerializationCodecFactory.setDecoderMaxObjectSize(Integer.MAX_VALUE);
         objectSerializationCodecFactory.setEncoderMaxObjectSize(Integer.MAX_VALUE);
-        HubHeader.acceptor.getFilterChain().addLast("codec-Serializable", new ProtocolCodecFilter(objectSerializationCodecFactory));
-        HubHeader.acceptor.setHandler(HubHeader.minaClientHandler);
-        HubHeader.acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 30);
+        HubHeader.getHubNetworkHeader().acceptor.getFilterChain().addLast("codec-Serializable", new ProtocolCodecFilter(objectSerializationCodecFactory));
+        HubHeader.getHubNetworkHeader().acceptor.setHandler(HubHeader.getHubNetworkHeader().minaClientHandler);
+        HubHeader.getHubNetworkHeader().acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 30);
     }
 
     public void start() throws IOException {
@@ -27,7 +27,7 @@ public class HubServer {
         String msg2 = "Server started on " + HubHeader.getConfig().getServerPort();
 
         logger.info(msg1);
-        HubHeader.acceptor.bind(new InetSocketAddress(HubHeader.getConfig().getServerPort()));
+        HubHeader.getHubNetworkHeader().acceptor.bind(new InetSocketAddress(HubHeader.getConfig().getServerPort()));
         logger.info(msg2);
     }
 }

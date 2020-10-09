@@ -29,6 +29,7 @@
         <module>jsellforward-db</module>
         <module>jsellforward-authd</module>
         <module>jsellforward-hub</module>
+        <module>jsellforward-utils</module>
     </modules>
 
     <dependencies>

@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.github.kvac.jsellforwar.jsellforward-root</groupId>
-    <artifactId>jsellforward-client</artifactId>
+    <artifactId>jsellforward-utils</artifactId>
     <packaging>jar</packaging>
 
     <build>
@@ -26,7 +26,7 @@
                             <finalName>${project.artifactId}-${project.version}-${git.branch}-${git.commit.id.full}</finalName>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.client.init.ClientInit</mainClass>
+                                    <mainClass>com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.utils.Init</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

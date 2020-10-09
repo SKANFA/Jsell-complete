@@ -6,11 +6,10 @@
 package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.header;
 
 import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.config.HubConfig;
-import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.network.handler.MinaClientHandler;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.network.header.HubNetworkHeader;
 import java.io.File;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 /**
  *
@@ -21,7 +20,7 @@ public class HubHeader {
     private HubHeader() {
     }
     @Getter
-    public static final File ROOT_DIR = new File("");
+    public static final File ROOT_DIR = new File("HubFiles");
 
     @Getter
     public static final File configFile = new File(ROOT_DIR, "config.yml");
@@ -30,7 +29,7 @@ public class HubHeader {
     @Setter
     private static HubConfig config = new HubConfig();
 
-    public static final NioSocketAcceptor acceptor = new NioSocketAcceptor();
-    public static final MinaClientHandler minaClientHandler = new MinaClientHandler();
+    @Getter
+    static HubNetworkHeader hubNetworkHeader = new HubNetworkHeader();
 
 }
