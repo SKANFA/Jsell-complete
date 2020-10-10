@@ -9,6 +9,13 @@
     <groupId>com.github.kvac.jsellforwar.jsellforward-root</groupId>
     <artifactId>jsellforward-authd</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.github.kvac.jsellforwar.jsellforward-root</groupId>
+            <artifactId>jsellforward-libs</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

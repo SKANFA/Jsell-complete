@@ -16,5 +16,4 @@ public class Client {
     @Getter
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private final Profile profile = new Profile();
-
 }
