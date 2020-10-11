@@ -2,8 +2,8 @@ package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.init;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.config.DbConfig;
 import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.header.DbHeader;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.configs.DbConfig;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.security.Security;
@@ -71,8 +71,8 @@ public class DbInit {
             try {
                 ConnectFuture future = DbHeader.getConnector().connect(
                         new InetSocketAddress(
-                                DbHeader.getConfig().getHubHost(),
-                                DbHeader.getConfig().getHubPort()
+                                DbHeader.getConfig().getHubConfig().getHubHost(),
+                                DbHeader.getConfig().getHubConfig().getHubPort()
                         )
                 );
                 future.awaitUninterruptibly();

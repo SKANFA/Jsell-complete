@@ -1,22 +1,35 @@
 package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.hub.network.handler;
 
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.client.Client;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.network.Route;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.network.requests.ApplicationIdentificationPacket;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.network.sessions.SessionsVar;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- *
- * @author jdcs_dev
- */
 public class MinaClientHandler extends IoHandlerAdapter {
 
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public void messageReceived(IoSession session, Object message) throws Exception {
-        logger.info("messageReceived");
+        if (message instanceof ApplicationIdentificationPacket) {
+            ApplicationIdentificationPacket aip = (ApplicationIdentificationPacket) message;
+            if (aip.isAnswer()) {
+                Client answered = aip.getAnswered();
+                Route.NodeType nodeType = aip.getNodeType();
+                session.setAttribute(SessionsVar.CLIENT, answered);
+                session.setAttribute(SessionsVar.NODETPE, nodeType);
+                logger.info("ident complete");
+            } else {
+                logger.info("ASKED WHO HUB");
+            }
+        } else {
+            logger.info("messageReceived");
+        }
     }
 
     @Override
@@ -37,6 +50,12 @@ public class MinaClientHandler extends IoHandlerAdapter {
     @Override
     public void sessionOpened(IoSession session) throws Exception {
         logger.info("sessionOpened");
+        //IDENT
+        ApplicationIdentificationPacket identificationPacket = new ApplicationIdentificationPacket();
+        identificationPacket.getRoute().setFrom(Route.NodeType.HUB);
+        identificationPacket.setAnswer(false);
+        session.write(identificationPacket);
+        //IDENT
     }
 
 }

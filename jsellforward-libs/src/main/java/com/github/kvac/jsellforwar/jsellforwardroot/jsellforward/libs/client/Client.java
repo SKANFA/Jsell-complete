@@ -2,11 +2,12 @@ package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.client;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
 @DatabaseTable(tableName = "profiles")
-public class Client {
+public class Client implements Serializable {
 
     @Getter
     @Setter
@@ -16,4 +17,8 @@ public class Client {
     @Getter
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private final Profile profile = new Profile();
+
+    public void cleanProfile() {
+        this.profile.setSecret(null);
+    }
 }

@@ -11,4 +11,18 @@ package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.authd.init;
  */
 public class AuthDInit {
 
+    public static void main(String[] args) {
+        AuthDInit authDInit = new AuthDInit();
+        authDInit.initConfig();
+        authDInit.initNewWork();
+
+    }
+
+    private void initConfig() {
+        //
+    }
+
+    private void initNewWork() {
+        //
+    }
 }

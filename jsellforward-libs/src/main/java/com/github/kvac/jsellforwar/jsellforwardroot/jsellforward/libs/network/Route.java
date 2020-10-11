@@ -1,14 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.network;
 
-/**
- *
- * @author jdcs_dev
- */
-public class Route {
+import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+
+public class Route implements Serializable {
+
+    public enum NodeType {
+        HUB,
+        DB,
+        AUTHD,
+        ORDERS,
+        WEB,
+        SSHD,
+        CLIENT,
+
+    }
+
+    @Getter
+    @Setter
+    private NodeType from;
+    @Getter
+    @Setter
+    private NodeType to;
 
 }

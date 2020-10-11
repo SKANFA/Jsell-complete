@@ -19,7 +19,7 @@
 
         <jackson-dataformat-yaml.version>2.11.3</jackson-dataformat-yaml.version>
         <jackson-databind.version>2.11.3</jackson-databind.version>
-        <org.projectlombok:lombok.version>1.18.14</org.projectlombok:lombok.version>
+        <org.projectlombok:lombok.version>1.18.12</org.projectlombok:lombok.version>
     </properties>
 
     <modules>

@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.header;
 
-import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.config.DbConfig;
 import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.db.network.MinaClientHandler;
+import com.github.kvac.jsellforwar.jsellforwardroot.jsellforward.libs.configs.DbConfig;
 import java.io.File;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +17,7 @@ public class DbHeader {
     }
 
     @Getter
-    public static final File ROOT_DIR = new File("");
+    public static final File ROOT_DIR = new File("DbFiles");
 
     @Getter
     public static final File configFile = new File(ROOT_DIR, "config.yml");
